@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belly Button Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: black;
+      background-color: lightskyblue;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <img src="bacteria.jpg" alt="Belly Button Biodiversity" class="img-responsive">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          <option value="940" selected></option>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <p>This bar chart displays the top 10 OTUs found in the selected test subject's belly button. The OTUs are represented by their IDs, and the height of each bar represents the frequency at which the OTU was found in the sample. Hover over the bars to see more information about each OTU.</p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <p>This gauge chart displays the frequency at which the selected test subject washes their belly button per week, as reported in the demographic information. The needle indicates the scrubs per week on a scale from 0-10.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+        <p>This bubble chart displays all the OTUs found in the selected test subject's belly button. The size of each bubble represents the frequency at which the OTU was found. Hover over each bubble to see more information about the OTU.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>This project analyzes the biodiversity of belly buttons using data collected from test subjects. The charts on this page show various metrics related to the microbial populations found in the belly buttons of the subjects.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
